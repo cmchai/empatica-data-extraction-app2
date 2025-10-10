@@ -2,3 +2,4 @@ streamlit==1.50.0
 avro==1.11.3
 numpy==1.26.4
 pandas==2.2.2
+altair>=5.5.0
