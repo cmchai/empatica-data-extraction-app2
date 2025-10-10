@@ -5,7 +5,8 @@
 
 import re
 # from fastavro import reader
-import altair as alt
+# import altair as alt
+from avro import datafile
 import pickle
 import numpy as np
 import streamlit as st
