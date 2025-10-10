@@ -4,7 +4,8 @@
 ### Functions of Data Wrangling for Empatica Data ###
 
 import re
-from fastavro import reader
+# from fastavro import reader
+from avro.datafile import DataFileReader, DataFileWriter
 import pickle
 import numpy as np
 import streamlit as st
@@ -58,14 +59,14 @@ def reading_avro_files(uploaded_files):
     # read all these avro files and put them into a list
     raw_datas = []
 
-    for f in sorted_files:
-        try:
-            bio = io.BytesIO(f.getvalue())
-            records = list(reader(bio))
-            raw_datas.extend(records)
-            st.success(f"Read raw data from {f.name}")
-        except Exception as e:
-            st.error(f"Failed to read {f.name}: {e}")
+    # for f in sorted_files:
+    #     try:
+    #         bio = io.BytesIO(f.getvalue())
+    #         records = list(reader(bio))
+    #         raw_datas.extend(records)
+    #         st.success(f"Read raw data from {f.name}")
+    #     except Exception as e:
+    #         st.error(f"Failed to read {f.name}: {e}")
 
     return raw_datas
 
